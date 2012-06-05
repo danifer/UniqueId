@@ -1,4 +1,4 @@
 UniqueId
 ========
 
-A unique ID generator
+A unique ID generator.
