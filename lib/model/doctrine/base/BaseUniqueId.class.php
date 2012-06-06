@@ -27,7 +27,7 @@ abstract class BaseUniqueId extends sfDoctrineRecord
              ));
 
         $this->option('symfony', array(
-             'form' => false,
+             'form' => true,
              'filter' => false,
              ));
     }

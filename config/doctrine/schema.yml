@@ -1,7 +1,7 @@
 UniqueId:
   options:
     symfony:
-      form: false
+      form: true
       filter: false
   columns:
     stub:

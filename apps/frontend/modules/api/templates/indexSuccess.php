@@ -1,10 +1,24 @@
 <?php slot('title', sprintf('API')) ?>
 <p>
-  I suppose we could put some API documentation here.  That would make sense...
-  <br /><br />
-  In the meantime, try these:
-  <ul>
-    <li><?php echo link_to('ping/check service availability','api/ping?') ?></li>
-    <li><?php echo link_to('get an ID for a stub','api_v1_0/getId?stub=project_1') ?></li>
-  </ul>
+  If you already have a <?php echo link_to('project','stub/new?') ?> on file with us, you can start requesting unique IDs with the methods below:
 </p>
+
+<h2>Versioning</h2>
+<p>
+  Please note the API version number in the endpoint url.
+</p>
+
+<h3>Ping/Check Availability</h3>
+<ul>
+  <li>Purpose:  You can use this to confirm that the service is reachable.</li>
+  <li>Endpoint: <?php echo link_to(url_for('api/ping',true),'api/ping',true) ?>
+  <li>Method: GET</li>
+  <li>
+    Parameters:
+    <ul>
+      <li>Accepts: [stub], [markdown]</li>
+      <li>Required: [stub]</li>
+    </ul>
+  </li>
+  <li>Returns: Local date/time for the host in ISO 8601 date format.</li>
+</ul>

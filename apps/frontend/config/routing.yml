@@ -4,7 +4,7 @@
 
 homepage:
   url:   /
-  param:   { module: static, action: index }
+  param:   { module: stub, action: new }
 
 default_index:
   url:   /:module
