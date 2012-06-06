@@ -1,0 +1,6 @@
+#The database.yml file has passwords in it
+config/databases.yml
+
+lib/*
+cache/*
+
