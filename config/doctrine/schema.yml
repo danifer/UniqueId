@@ -1,0 +1,9 @@
+UniqueId:
+  options:
+    symfony:
+      form: false
+      filter: false
+  columns:
+    stub:
+      type: string(255)
+      unique: true

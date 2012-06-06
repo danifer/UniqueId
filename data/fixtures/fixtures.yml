@@ -15,3 +15,11 @@
 #     password: changeme
 #     name:     Kris Wallsmith
 #     email:    kris.wallsmith@symfony-project.com
+
+UniqueId:
+  stub1:
+    stub: project_1
+  stub2:
+    stub: project_2
+  stub3:
+    stub: project_3
