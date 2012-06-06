@@ -2,4 +2,11 @@
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
 # default values
-#all:
+all:
+  domain_name: uniqueid.local
+
+  site:
+    url: uniqueid.local
+    title: UniqueId
+    informal_title: UniqueId
+    tagline: A unique ID generator
