@@ -19,7 +19,13 @@
 UniqueId:
   stub1:
     stub: project_1
+    project_name: Project 1
+    access_key: xxxxxxxxxxxxx
   stub2:
     stub: project_2
+    project_name: Project 2
+    access_key: xxxxxxxxxxxxx
   stub3:
     stub: project_3
+    project_name: Project 3
+    access_key: xxxxxxxxxxxxx

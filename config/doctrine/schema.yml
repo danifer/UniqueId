@@ -7,3 +7,7 @@ UniqueId:
     stub:
       type: string(255)
       unique: true
+    project_name:
+      type: string(255)
+    access_key:
+      type: string(36)

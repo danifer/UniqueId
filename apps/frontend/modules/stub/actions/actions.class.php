@@ -20,6 +20,14 @@ class stubActions extends sfActions
     $this->redirect('stub/new');
   }
 
+  public function executeShow(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->getParameter('stub',null));
+    $this->forward404Unless($request->getParameter('access_key',null));
+    $this->forward404Unless($this->stub = Doctrine::getTable('UniqueId')->findOneByStub(urlencode($request->getParameter('stub'))));
+    $this->forward404Unless($this->stub->getAccessKey() == $request->getParameter('access_key'));
+  }
+
   public function executeNew(sfWebRequest $request)
   {
     $this->stub = new UniqueId();
@@ -33,8 +41,8 @@ class stubActions extends sfActions
       {
         $this->form->save();
 
-        $this->getUser()->setFlash('notice', sprintf('Stub created'));
-        $this->redirect('stub/new');
+        $this->getUser()->setFlash('notice', sprintf('Success!'));
+        $this->redirect('stub/show?stub='.$this->form->getObject()->getStub().'&access_key='.$this->form->getObject()->getAccessKey());
       }
     }
   }

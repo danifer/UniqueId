@@ -23,7 +23,9 @@ class UniqueIdForm extends BaseUniqueIdForm
 
   public function save($con = null)
   {
-    $this->object->setStub(urlencode($this->getValue('stub')));
+    $this->object->setStub(strtolower(urlencode($this->getValue('stub'))));
+    $this->object->setProjectName($this->getValue('stub'));
+    $this->object->setAccessKey(md5($this->getValue('stub').rand()));
     $this->object->save();
 
     return $this->object;

@@ -25,10 +25,14 @@ class api_v1_0Actions extends sfActions
     sfConfig::set('sf_web_debug', false);
 
     $this->forward404Unless($request->getParameter('stub',null));
-    $this->forward404Unless($stub = Doctrine::getTable('UniqueId')->findOneByStub($request->getParameter('stub')));
+    $this->forward404Unless($request->getParameter('access_key',null));
+    $this->forward404Unless($stub = Doctrine::getTable('UniqueId')->findOneByStub(urlencode($request->getParameter('stub'))));
+    $this->forward404Unless($stub->getAccessKey() == $request->getParameter('access_key'));
 
     $result = new UniqueId();
     $result->setStub($stub->getStub());
+    $result->setProjectName($stub->getProjectName());
+    $result->setAccessKey($stub->getAccessKey());
     $result->replace();
 
     $markup = $request->getParameter('markup','json');

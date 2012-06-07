@@ -10,6 +10,8 @@
       <div class="nav-collapse">
         <ul class="nav">
           <li><?php echo link_to('Home', '@homepage') ?></li>
+          <li><?php echo link_to('Register a project', '@homepage') ?></li>
+          <li><?php echo link_to('API', 'api/index') ?></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
